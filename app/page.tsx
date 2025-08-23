@@ -56,8 +56,12 @@ export default function Home() {
       }
       const data: MemoryResult = await response.json();
       setResult(data);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('An unknown error occurred while generating the memory.');
+      }
     } finally {
       setIsGenerating(false);
     }
@@ -89,8 +93,12 @@ export default function Home() {
         functionName: 'mintTo',
         args: [address, metadataUri],
       });
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('An unknown error occurred during upload.');
+      }
       setIsUploading(false);
     }
   };
@@ -103,7 +111,6 @@ export default function Home() {
   };
 
   const isLoading = isGenerating || isUploading || isMinting || isConfirming;
-
   const renderContent = () => {
     if (!isConnected) {
       return (
@@ -116,11 +123,11 @@ export default function Home() {
     }
 
     if (isLoading) {
-      let loadingText = '';
-      if (isGenerating) loadingText = 'Generating your memory...';
+      let loadingText = 'Generating your memory...';
       if (isUploading) loadingText = 'Uploading to IPFS...';
       if (isMinting) loadingText = 'Waiting for wallet confirmation...';
       if (isConfirming) loadingText = 'Confirming transaction...';
+
       return (
         <div className="flex flex-col items-center gap-4 text-center">
           <Loading text={loadingText} />
@@ -158,8 +165,7 @@ export default function Home() {
                 className="text-primary underline hover:opacity-80"
               >
                 View Transaction on ShapeScan
-              </Link>{' '}
-              {}
+              </Link>
             </div>
             <Button onClick={handleStartNewMemory} className="w-full">
               Create Another Memory
@@ -219,7 +225,7 @@ export default function Home() {
         <CardHeader>
           <CardTitle>Make a New Memory</CardTitle>
           <CardDescription>
-            Write down today's memory. It can be up to 2000 characters.
+            Write down today&apos;s memory. It can be up to 2000 characters.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
