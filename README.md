@@ -1,161 +1,75 @@
-# Builder Kit: Onchain Starter Template
+# AI Memory NFT Minter
 
-A modern, production-ready starter template for building decentralized applications with sensible defaults.
+An innovative DApp that transforms your written memories into unique, AI-generated art and mints them as NFTs on the blockchain.
 
-<table width="100%">
-  <tr>
-    <td width="50%"><img src="./public/lp-1.png" alt="Builder Kit Screenshot 1" width="100%"/></td>
-    <td width="50%"><img src="./public/lp-2.png" alt="Builder Kit Screenshot 2" width="100%"/></td>
-  </tr>
-</table>
+<!-- Add a screenshot of the application here -->
+<!-- <img src="./path/to/screenshot.png" alt="AI Memory Minter Screenshot" width="100%"/> -->
 
-See deployed website: [builder-kit.vercel.app](https://builder-kit.vercel.app/)
+## ✨ Core Features
 
-## ✨ Features
+- **AI-Powered Art:** Leverages multiple AI services to bring memories to life.
+  - **Image Generation:** Uses **Fal.ai** with Stable Diffusion models to create stunning visuals from text.
+  - **Text Generation:** Uses **Groq** with Llama 3 models to generate creative titles and captions for your art.
+- **Decentralized Storage:** All NFT images and metadata are uploaded to **IPFS** via Pinata, ensuring they are persistent and decentralized.
+- **On-Chain Minting:** Mint your generated memories as ERC-721 NFTs on the **Shape Sepolia** testnet.
+- **Modern Web3 Stack:** Built with the latest technologies for a smooth and robust user experience.
 
-- **Next.js 15** with App Router and React 19
-- **Web3 Integration** with Wagmi v2 and RainbowKit
-- **React Query** for data fetching
-- **Shape Network** support (Mainnet & Sepolia)
-- **Alchemy SDK** for performant blockchain interactions
-- **TypeScript** for type safety
-- **Tailwind CSS** with theming and dark mode support
-- **Shadcn/ui** for a large range of fully customizable and themable components
-- **Error Boundaries** for graceful error handling
+## 🛠️ Tech Stack
 
-## 🚀 Quick Start
+- **Framework:** [Next.js 15](https://nextjs.org/) (App Router) & [React 19](https://react.dev/)
+- **Blockchain Interaction:** [Wagmi](https://wagmi.sh/) for contract calls and wallet state.
+- **Wallet Connection:** [RainbowKit](https://www.rainbowkit.com/) for a seamless multi-wallet experience.
+- **AI Services:**
+  - [Fal.ai](https://fal.ai/) for Image Generation.
+  - [Groq](https://groq.com/) for high-speed Text Generation.
+- **Decentralized Storage:** [Pinata](https://pinata.cloud/) for IPFS uploads.
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/) for a beautiful, responsive UI.
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
 
-1. **Clone or use as template**
+## 🚀 Getting Started
 
-   ```bash
-   git clone https://github.com/shape-network/builder-kit.git
-   cd builder-kit
-   ```
+Follow these steps to set up and run the project locally.
 
-2. **Install dependencies**
-
-   ```bash
-   yarn install
-   ```
-
-3. **Set up environment variables**
-
-   ```bash
-   cp .env-example .env
-   ```
-
-   Fill in your environment variables:
-
-   - `NEXT_PUBLIC_ALCHEMY_KEY`: Get from [Alchemy](https://alchemy.com)
-   - `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID`: Get from [WalletConnect](https://cloud.walletconnect.com)
-   - `NEXT_PUBLIC_CHAIN_ID`: Use `11011` for Shape Sepolia or `360` for Shape Mainnet
-
-4. **Start development server**
-
-   ```bash
-   yarn dev
-   ```
-
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 🛠️ Development
-
-### Available Scripts
-
-- `yarn dev` - Start development server with Turbopack
-- `yarn build` - Build for production
-- `yarn start` - Start production server
-- `yarn lint` - Run ESLint
-- `yarn lint:fix` - Fix ESLint issues
-- `yarn type-check` - Run TypeScript type checking
-- `yarn format` - Format code with Prettier
-- `yarn format:check` - Check code formatting
-
-### Project Structure
-
-```
-├── app/                    # Next.js App Router
-│   ├── api/               # API routes
-│   │   ├── get-nfts/     # Fetch NFTs for address
-├── components/            # React components
-│   ├── ui/               # Shadcn/ui components
-│   ├── error-boundary.tsx
-│   ├── loading.tsx
-│   ├── providers.tsx
-│   ├── theme-toggle.tsx
-│   └── wallet-connect.tsx
-├── hooks/                 # Custom React hooks
-│   ├── web3.ts           # Web3 data fetching hooks
-│   ├── use-balance.ts    # Wallet balance hook
-│   ├── use-mobile.ts     # Mobile detection hook
-├── lib/                   # Utility functions and configurations
-│   ├── clients.ts        # Alchemy and RPC clients
-│   ├── config.ts         # Environment configuration
-│   ├── utils.ts          # Helper functions
-│   └── web3.ts           # Wagmi configuration
-└── public/               # Static assets
-```
-
-## 🎨 Customization
-
-### Theme Customization
-
-Edit `app/globals.css` to customize the color scheme:
-
-```css
-:root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  /* ... other CSS variables */
-}
-```
-
-### Adding Components
-
-Use Shadcn/ui CLI to add new components:
+### 1. Clone the Repository
 
 ```bash
-npx shadcn@latest add button
+git clone <your-repo-url>
+cd <your-repo-name>
+2. Install Dependencies
+This project uses yarn as the package manager.
+
+yarn install
+3. Set Up Environment Variables
+You need to create a .env file in the root of the project. You can copy the .env-example file if it exists, or create a new one.
+
+cp .env-example .env
+Fill the .env file with the following keys:
+
+# WalletConnect & Alchemy Keys (for network connection)
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID="b24c..."
+NEXT_PUBLIC_ALCHEMY_KEY="0Yz..."
+
+# AI Service Keys
+FAL_API_KEY="key-id:key-secret"   # Get from fal.ai
+GROQ_API_KEY="gsk_..."            # Get from groq.com
+
+# IPFS Pinning Service Key
+PINATA_JWT="eyJ..."               # Get from pinata.cloud
+
+# Deployed Smart Contract Address
+NEXT_PUBLIC_NFT_CONTRACT_ADDRESS="0xd6E..." # The address of your deployed NFT Collection contract
+4. Run the Development Server
+yarn dev
+Open http://localhost:3000 in your browser to see the result.
+
+📄 How It Works
+Connect Wallet: The user connects their wallet to the Shape Sepolia testnet.
+Write Memory: The user writes a memory or a descriptive text.
+Generate Art: The app sends the text to a backend API that calls Fal.ai and Groq to generate an image, title, and caption.
+Display & Review: The generated art and text are displayed for the user to review.
+Mint NFT:
+Upon clicking "Mint", the frontend calls another API to upload the image and metadata to IPFS via Pinata.
+The frontend receives the IPFS URI for the metadata.
+It then uses Wagmi to prompt the user to sign a transaction to call the mintTo function on the smart contract.
+Success: Once the transaction is confirmed on the blockchain, a success message with a link to the transaction on ShapeScan is displayed.
 ```
-
-### Web3 Integration
-
-The template includes examples of Web3 integration:
-
-- Wallet connection with RainbowKit
-- Balance fetching with custom hooks
-- Chain switching and network detection
-- Error handling for Web3 operations
-
-## 🌐 Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to [Vercel](https://vercel.com)
-3. Add your environment variables in Vercel dashboard
-4. Deploy!
-
-## 📚 Documentation
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Wagmi Documentation](https://wagmi.sh)
-- [RainbowKit Documentation](https://www.rainbowkit.com)
-- [Shadcn/ui Documentation](https://ui.shadcn.com)
-- [Shape Network Documentation](https://docs.shape.network)
-- [Alchemy SDK Documentation](https://docs.alchemy.com/reference/alchemy-sdk-quickstart)
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 💬 Support
-
-- [Shape Discord](http://discord.com/invite/shape-l2)
-- [Twitter/X @Shape_L2](https://x.com/Shape_L2)
-- [Twitter/X @williamhzo](https://x.com/williamhzo)
