@@ -1,16 +1,15 @@
 AI Memory NFT Minter - Shapecraft Hackathon
-Link to GitHub Repository: https://github.com/morteza-hmi/shapecraft-ai-memory-minter
+Link to GitHub Repository: https://github.com/arashmpe/Diary/tree/Diary-1
 
 This project was developed for the Shapecraft AI x NFT Hackathon.
 
 🎥 Screen Recording & Walkthrough
 A detailed screen recording that walks through the project concept and functionality will be available here.
-
-[Link to Screen Recording]
+https://drive.google.com/file/d/1pKCKoYQKKNvg8Vbq-DsHAbO0QvB9q2LA/view?usp=sharing
 
 👥 Team Members
-Morteza HMI: https://github.com/morteza-hmi
-[Add other team members here if any]
+Arash MPE: https://github.com/arashmpe
+
 💡 Concept
 The AI Memory NFT Minter is an innovative decentralized application (DApp) that transforms your written memories into unique, AI-generated art and mints them as NFTs on the blockchain. Our goal is to create a new way for people to preserve their most cherished moments, turning abstract feelings and memories into tangible, ownable digital assets.
 
