@@ -47,7 +47,7 @@ Language: TypeScript
 Follow these steps to set up and run the project on your local machine.
 
 1. Clone the Repository
-git clone https://github.com/morteza-hmi/shapecraft-ai-memory-minter.git
+git clone https://github.com/arashmpe/Diary.git
 cd shapecraft-ai-memory-minter
 2. Install Dependencies
 This project uses yarn as the package manager.
