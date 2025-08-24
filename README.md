@@ -1,75 +1,78 @@
-# AI Memory NFT Minter
+AI Memory NFT Minter - Shapecraft Hackathon
+Link to GitHub Repository: https://github.com/morteza-hmi/shapecraft-ai-memory-minter
 
-An innovative DApp that transforms your written memories into unique, AI-generated art and mints them as NFTs on the blockchain.
+This project was developed for the Shapecraft AI x NFT Hackathon.
 
-<!-- Add a screenshot of the application here -->
-<!-- <img src="./path/to/screenshot.png" alt="AI Memory Minter Screenshot" width="100%"/> -->
+🎥 Screen Recording & Walkthrough
+A detailed screen recording that walks through the project concept and functionality will be available here.
 
-## ✨ Core Features
+[Link to Screen Recording]
 
-- **AI-Powered Art:** Leverages multiple AI services to bring memories to life.
-  - **Image Generation:** Uses **Fal.ai** with Stable Diffusion models to create stunning visuals from text.
-  - **Text Generation:** Uses **Groq** with Llama 3 models to generate creative titles and captions for your art.
-- **Decentralized Storage:** All NFT images and metadata are uploaded to **IPFS** via Pinata, ensuring they are persistent and decentralized.
-- **On-Chain Minting:** Mint your generated memories as ERC-721 NFTs on the **Shape Sepolia** testnet.
-- **Modern Web3 Stack:** Built with the latest technologies for a smooth and robust user experience.
+👥 Team Members
+Morteza HMI: https://github.com/morteza-hmi
+[Add other team members here if any]
+💡 Concept
+The AI Memory NFT Minter is an innovative decentralized application (DApp) that transforms your written memories into unique, AI-generated art and mints them as NFTs on the blockchain. Our goal is to create a new way for people to preserve their most cherished moments, turning abstract feelings and memories into tangible, ownable digital assets.
 
-## 🛠️ Tech Stack
+How It Works (Walkthrough)
+Connect Wallet: The user connects their Web3 wallet to the application, which operates on the Shape Sepolia testnet.
+Write a Memory: The user is prompted to write a memory, a dream, a story, or any text that they wish to immortalize.
+AI-Powered Generation:
+The application sends the user's text to a backend service that leverages Groq (using Llama 3) to generate a creative title and a descriptive caption based on the memory.
+Simultaneously, it uses Fal.ai (with Stable Diffusion models) to generate a unique piece of art that visually represents the memory.
+Review and Approve: The generated artwork, title, and caption are displayed for the user to review.
+Mint as NFT:
+Once the user approves, the frontend uploads the image and its metadata (title, description) to IPFS via Pinata, ensuring the data is stored in a decentralized and permanent manner.
+The application then initiates a transaction on the blockchain, prompting the user to mint their memory as an ERC-721 NFT.
+Confirmation: After the transaction is confirmed, the user receives a confirmation with a link to view their newly minted NFT on an explorer like ShapeScan.
+🔮 Future Features
+We have a long-term vision for this project. Here are some of the features we plan to add in the future:
 
-- **Framework:** [Next.js 15](https://nextjs.org/) (App Router) & [React 19](https://react.dev/)
-- **Blockchain Interaction:** [Wagmi](https://wagmi.sh/) for contract calls and wallet state.
-- **Wallet Connection:** [RainbowKit](https://www.rainbowkit.com/) for a seamless multi-wallet experience.
-- **AI Services:**
-  - [Fal.ai](https://fal.ai/) for Image Generation.
-  - [Groq](https://groq.com/) for high-speed Text Generation.
-- **Decentralized Storage:** [Pinata](https://pinata.cloud/) for IPFS uploads.
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/) for a beautiful, responsive UI.
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
+Art Style Selection: Allow users to choose from a variety of artistic styles (e.g., "Impressionism," "Cyberpunk," "Anime," "Photorealistic") for their generated art.
+Enhanced Personalization: Improve the AI's output by allowing users to provide additional personal data, such as gender, date of birth, location, etc., for a more context-aware creation.
+NFT Collections: Enable users to group their minted memories into collections, creating a personal gallery or themed sets.
+On-Chain Metadata: Give users the option to store the title and description of their memory directly on-chain for maximum permanence.
+AI-Extracted Metadata: Use AI to automatically extract metadata from the generated image, such as dominant colors, detected objects, or artistic elements, and include this information in the NFT's metadata.
+Personal Gallery & Sharing: Create a personal, filterable gallery for each user to view their collection and share their minted memories with others.
+🛠️ Tech Stack
+Framework: Next.js 15 (App Router) & React 19
+Blockchain Interaction: Wagmi for contract calls and wallet state.
+Wallet Connection: RainbowKit for a seamless multi-wallet experience.
+AI Services:
+Fal.ai for Image Generation.
+Groq for high-speed Text Generation.
+Decentralized Storage: Pinata for IPFS uploads.
+Styling: Tailwind CSS & shadcn/ui for a beautiful, responsive UI.
+Language: TypeScript
+🚀 Getting Started Locally
+Follow these steps to set up and run the project on your local machine.
 
-## 🚀 Getting Started
-
-Follow these steps to set up and run the project locally.
-
-### 1. Clone the Repository
-
-```bash
-git clone <your-repo-url>
-cd <your-repo-name>
+1. Clone the Repository
+git clone https://github.com/morteza-hmi/shapecraft-ai-memory-minter.git
+cd shapecraft-ai-memory-minter
 2. Install Dependencies
 This project uses yarn as the package manager.
 
 yarn install
 3. Set Up Environment Variables
-You need to create a .env file in the root of the project. You can copy the .env-example file if it exists, or create a new one.
+Create a .env file in the root of the project by copying the example file.
 
 cp .env-example .env
-Fill the .env file with the following keys:
+Fill the .env file with your API keys and contract address:
 
 # WalletConnect & Alchemy Keys (for network connection)
-NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID="b24c..."
-NEXT_PUBLIC_ALCHEMY_KEY="0Yz..."
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID="YOUR_WALLET_CONNECT_ID"
+NEXT_PUBLIC_ALCHEMY_KEY="YOUR_ALCHEMY_KEY"
 
 # AI Service Keys
-FAL_API_KEY="key-id:key-secret"   # Get from fal.ai
-GROQ_API_KEY="gsk_..."            # Get from groq.com
+FAL_API_KEY="YOUR_FAL_API_KEY"
+GROQ_API_KEY="YOUR_GROQ_API_KEY"
 
 # IPFS Pinning Service Key
-PINATA_JWT="eyJ..."               # Get from pinata.cloud
+PINATA_JWT="YOUR_PINATA_JWT"
 
 # Deployed Smart Contract Address
-NEXT_PUBLIC_NFT_CONTRACT_ADDRESS="0xd6E..." # The address of your deployed NFT Collection contract
+NEXT_PUBLIC_NFT_CONTRACT_ADDRESS="YOUR_NFT_CONTRACT_ADDRESS"
 4. Run the Development Server
 yarn dev
 Open http://localhost:3000 in your browser to see the result.
-
-📄 How It Works
-Connect Wallet: The user connects their wallet to the Shape Sepolia testnet.
-Write Memory: The user writes a memory or a descriptive text.
-Generate Art: The app sends the text to a backend API that calls Fal.ai and Groq to generate an image, title, and caption.
-Display & Review: The generated art and text are displayed for the user to review.
-Mint NFT:
-Upon clicking "Mint", the frontend calls another API to upload the image and metadata to IPFS via Pinata.
-The frontend receives the IPFS URI for the metadata.
-It then uses Wagmi to prompt the user to sign a transaction to call the mintTo function on the smart contract.
-Success: Once the transaction is confirmed on the blockchain, a success message with a link to the transaction on ShapeScan is displayed.
-```
