@@ -68,11 +68,12 @@
 git clone https://github.com/arashmpe/Diary.git
 cd shapecraft-ai-memory-minter
 
-### 2. Install Dependencies
+2. Install Dependencies
 yarn install
 
-### 3. Set Up Environment Variables
+3. Set Up Environment Variables
 cp .env-example .env
+
 
 Fill the .env file with your API keys and contract address:
 
@@ -83,11 +84,9 @@ GROQ_API_KEY="YOUR_GROQ_API_KEY"
 PINATA_JWT="YOUR_PINATA_JWT"
 NEXT_PUBLIC_NFT_CONTRACT_ADDRESS="YOUR_NFT_CONTRACT_ADDRESS"
 
-### 4. Run Development Server
+4. Run Development Server
 yarn dev
 
-🎥 Demo & Walkthrough
-https://drive.google.com/file/d/1pKCKoYQKKNvg8Vbq-DsHAbO0QvB9q2LA/view
 
-
-
+Open http://localhost:3000
+ to see the app.
