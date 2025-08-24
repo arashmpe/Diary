@@ -4,7 +4,8 @@
 [![Demo Video](https://img.shields.io/badge/Watch-Demo-red)](https://drive.google.com/file/d/1pKCKoYQKKNvg8Vbq-DsHAbO0QvB9q2LA/view?usp=sharing)
 
 ## 👥 Team Members
-- **Arash MPE**: [GitHub](https://github.com/arashmpe)
+
+* **Arash MPE**: [GitHub](https://github.com/arashmpe)
 
 ---
 
@@ -16,77 +17,99 @@
 
 ## 🚀 How It Works
 
-1. **Connect Wallet**  
-   - Connect your Web3 wallet. The app runs on **Shape Sepolia testnet**.
+1. **Connect Wallet**
 
-2. **Write a Memory**  
-   - Enter a memory, dream, story, or any text you want to immortalize.
+   * Connect your Web3 wallet. The app runs on **Shape Sepolia testnet**.
 
-3. **AI-Powered Generation**  
-   - **Groq (Llama 3)** generates a creative title and description.  
-   - **Fal.ai (Stable Diffusion)** creates a unique artwork representing your memory.
+2. **Write a Memory**
 
-4. **Review & Approve**  
-   - Review the AI-generated title, description, and artwork.
+   * Enter a memory, dream, story, or any text you want to immortalize.
 
-5. **Mint as NFT**  
-   - Upload image and metadata to **IPFS via Pinata**.  
-   - Mint your memory as an **ERC-721 NFT**.
+3. **AI-Powered Generation**
 
-6. **Confirmation**  
-   - Receive confirmation and a link to view your NFT on explorers like **ShapeScan**.
+   * **Groq (Llama 3)** generates a creative title and description.
+   * **Fal.ai (Stable Diffusion)** creates a unique artwork representing your memory.
+
+4. **Review & Approve**
+
+   * Review the AI-generated title, description, and artwork.
+
+5. **Mint as NFT**
+
+   * Upload image and metadata to **IPFS via Pinata**.
+   * Mint your memory as an **ERC-721 NFT**.
+
+6. **Confirmation**
+
+   * Receive confirmation and a link to view your NFT on explorers like **ShapeScan**.
 
 ---
 
 ## 🔮 Future Features
 
-- Art style selection (e.g., Impressionism, Cyberpunk, Anime, Photorealistic)  
-- Enhanced personalization using user data  
-- NFT collections and galleries  
-- On-chain metadata storage  
-- AI-extracted metadata for NFTs  
-- Personal gallery with sharing options  
+* Art style selection (e.g., Impressionism, Cyberpunk, Anime, Photorealistic)
+* Enhanced personalization using user data
+* NFT collections and galleries
+* On-chain metadata storage
+* AI-extracted metadata for NFTs
+* Personal gallery with sharing options
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 15 (App Router), React 19  
-- **Blockchain:** Wagmi for contract calls & wallet state  
-- **Wallet Connection:** RainbowKit  
-- **AI Services:** Fal.ai (Image Generation), Groq (Text Generation)  
-- **Storage:** Pinata (IPFS uploads)  
-- **Styling:** Tailwind CSS, shadcn/ui  
-- **Language:** TypeScript  
+* **Framework:** Next.js 15 (App Router), React 19
+* **Blockchain:** Wagmi for contract calls & wallet state
+* **Wallet Connection:** RainbowKit
+* **AI Services:** Fal.ai (Image Generation), Groq (Text Generation)
+* **Storage:** Pinata (IPFS uploads)
+* **Styling:** Tailwind CSS, shadcn/ui
+* **Language:** TypeScript
 
 ---
 
 ## ⚡ Getting Started Locally
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/arashmpe/Diary.git
 cd shapecraft-ai-memory-minter
+```
 
-2. Install Dependencies
+### 2. Install Dependencies
+
+```bash
 yarn install
+```
 
-3. Set Up Environment Variables
+### 3. Set Up Environment Variables
+
+```bash
 cp .env-example .env
+```
 
+Fill the `.env` file with your API keys and contract address:
 
-Fill the .env file with your API keys and contract address:
-
+```env
 NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID="YOUR_WALLET_CONNECT_ID"
 NEXT_PUBLIC_ALCHEMY_KEY="YOUR_ALCHEMY_KEY"
 FAL_API_KEY="YOUR_FAL_API_KEY"
 GROQ_API_KEY="YOUR_GROQ_API_KEY"
 PINATA_JWT="YOUR_PINATA_JWT"
 NEXT_PUBLIC_NFT_CONTRACT_ADDRESS="YOUR_NFT_CONTRACT_ADDRESS"
+```
 
-4. Run Development Server
+### 4. Run Development Server
+
+```bash
 yarn dev
+```
 
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
-Open http://localhost:3000
- to see the app.
+---
+
+## 🎥 Demo & Walkthrough
+
+[Watch the walkthrough](https://drive.google.com/file/d/1pKCKoYQKKNvg8Vbq-DsHAbO0QvB9q2LA/view?usp=sharing)
