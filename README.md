@@ -1,75 +1,115 @@
-# AI Memory NFT Minter
+# AI Memory NFT Minter – Shapecraft Hackathon
 
-An innovative DApp that transforms your written memories into unique, AI-generated art and mints them as NFTs on the blockchain.
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue)](https://github.com/arashmpe/Diary/tree/Diary-1)
+[![Demo Video](https://img.shields.io/badge/Watch-Demo-red)](https://drive.google.com/file/d/1pKCKoYQKKNvg8Vbq-DsHAbO0QvB9q2LA/view?usp=sharing)
 
-<!-- Add a screenshot of the application here -->
-<!-- <img src="./path/to/screenshot.png" alt="AI Memory Minter Screenshot" width="100%"/> -->
+## 👥 Team Members
 
-## ✨ Core Features
+* **Arash MPE**: [GitHub](https://github.com/arashmpe)
 
-- **AI-Powered Art:** Leverages multiple AI services to bring memories to life.
-  - **Image Generation:** Uses **Fal.ai** with Stable Diffusion models to create stunning visuals from text.
-  - **Text Generation:** Uses **Groq** with Llama 3 models to generate creative titles and captions for your art.
-- **Decentralized Storage:** All NFT images and metadata are uploaded to **IPFS** via Pinata, ensuring they are persistent and decentralized.
-- **On-Chain Minting:** Mint your generated memories as ERC-721 NFTs on the **Shape Sepolia** testnet.
-- **Modern Web3 Stack:** Built with the latest technologies for a smooth and robust user experience.
+---
+
+## 💡 Concept
+
+**AI Memory NFT Minter** is a decentralized application (DApp) that transforms personal memories into AI-generated art and mints them as NFTs. It allows users to preserve meaningful moments as unique, ownable digital assets, merging emotion, creativity, and blockchain technology.
+
+---
+
+## 🚀 How It Works
+
+1. **Connect Wallet**
+
+   * Connect your Web3 wallet. The app runs on **Shape Sepolia testnet**.
+
+2. **Write a Memory**
+
+   * Enter a memory, dream, story, or any text you want to immortalize.
+
+3. **AI-Powered Generation**
+
+   * **Groq (Llama 3)** generates a creative title and description.
+   * **Fal.ai (Stable Diffusion)** creates a unique artwork representing your memory.
+
+4. **Review & Approve**
+
+   * Review the AI-generated title, description, and artwork.
+
+5. **Mint as NFT**
+
+   * Upload image and metadata to **IPFS via Pinata**.
+   * Mint your memory as an **ERC-721 NFT**.
+
+6. **Confirmation**
+
+   * Receive confirmation and a link to view your NFT on explorers like **ShapeScan**.
+
+---
+
+## 🔮 Future Features
+
+* Art style selection (e.g., Impressionism, Cyberpunk, Anime, Photorealistic)
+* Enhanced personalization using user data
+* NFT collections and galleries
+* On-chain metadata storage
+* AI-extracted metadata for NFTs
+* Personal gallery with sharing options
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [Next.js 15](https://nextjs.org/) (App Router) & [React 19](https://react.dev/)
-- **Blockchain Interaction:** [Wagmi](https://wagmi.sh/) for contract calls and wallet state.
-- **Wallet Connection:** [RainbowKit](https://www.rainbowkit.com/) for a seamless multi-wallet experience.
-- **AI Services:**
-  - [Fal.ai](https://fal.ai/) for Image Generation.
-  - [Groq](https://groq.com/) for high-speed Text Generation.
-- **Decentralized Storage:** [Pinata](https://pinata.cloud/) for IPFS uploads.
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/) for a beautiful, responsive UI.
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Framework:** Next.js 15 (App Router), React 19
+* **Blockchain:** Wagmi for contract calls & wallet state
+* **Wallet Connection:** RainbowKit
+* **AI Services:** Fal.ai (Image Generation), Groq (Text Generation)
+* **Storage:** Pinata (IPFS uploads)
+* **Styling:** Tailwind CSS, shadcn/ui
+* **Language:** TypeScript
 
-## 🚀 Getting Started
+---
 
-Follow these steps to set up and run the project locally.
+## ⚡ Getting Started Locally
 
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-name>
-2. Install Dependencies
-This project uses yarn as the package manager.
-
-yarn install
-3. Set Up Environment Variables
-You need to create a .env file in the root of the project. You can copy the .env-example file if it exists, or create a new one.
-
-cp .env-example .env
-Fill the .env file with the following keys:
-
-# WalletConnect & Alchemy Keys (for network connection)
-NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID="b24c..."
-NEXT_PUBLIC_ALCHEMY_KEY="0Yz..."
-
-# AI Service Keys
-FAL_API_KEY="key-id:key-secret"   # Get from fal.ai
-GROQ_API_KEY="gsk_..."            # Get from groq.com
-
-# IPFS Pinning Service Key
-PINATA_JWT="eyJ..."               # Get from pinata.cloud
-
-# Deployed Smart Contract Address
-NEXT_PUBLIC_NFT_CONTRACT_ADDRESS="0xd6E..." # The address of your deployed NFT Collection contract
-4. Run the Development Server
-yarn dev
-Open http://localhost:3000 in your browser to see the result.
-
-📄 How It Works
-Connect Wallet: The user connects their wallet to the Shape Sepolia testnet.
-Write Memory: The user writes a memory or a descriptive text.
-Generate Art: The app sends the text to a backend API that calls Fal.ai and Groq to generate an image, title, and caption.
-Display & Review: The generated art and text are displayed for the user to review.
-Mint NFT:
-Upon clicking "Mint", the frontend calls another API to upload the image and metadata to IPFS via Pinata.
-The frontend receives the IPFS URI for the metadata.
-It then uses Wagmi to prompt the user to sign a transaction to call the mintTo function on the smart contract.
-Success: Once the transaction is confirmed on the blockchain, a success message with a link to the transaction on ShapeScan is displayed.
+git clone https://github.com/arashmpe/Diary.git
+cd shapecraft-ai-memory-minter
 ```
+
+### 2. Install Dependencies
+
+```bash
+yarn install
+```
+
+### 3. Set Up Environment Variables
+
+```bash
+cp .env-example .env
+```
+
+Fill the `.env` file with your API keys and contract address:
+
+```env
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID="YOUR_WALLET_CONNECT_ID"
+NEXT_PUBLIC_ALCHEMY_KEY="YOUR_ALCHEMY_KEY"
+FAL_API_KEY="YOUR_FAL_API_KEY"
+GROQ_API_KEY="YOUR_GROQ_API_KEY"
+PINATA_JWT="YOUR_PINATA_JWT"
+NEXT_PUBLIC_NFT_CONTRACT_ADDRESS="YOUR_NFT_CONTRACT_ADDRESS"
+```
+
+### 4. Run Development Server
+
+```bash
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
+
+---
+
+## 🎥 Demo & Walkthrough
+
+[Watch the walkthrough](https://drive.google.com/file/d/1pKCKoYQKKNvg8Vbq-DsHAbO0QvB9q2LA/view?usp=sharing)
